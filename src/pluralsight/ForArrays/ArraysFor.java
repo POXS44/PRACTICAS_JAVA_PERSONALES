@@ -28,6 +28,7 @@ public class ArraysFor {
                     System.out.println("Invalid opCode" + opCodes[i]);
                     break;
             }
+            System.out.println(results[i]);
         }
     }
 }
