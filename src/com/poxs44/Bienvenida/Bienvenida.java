@@ -32,7 +32,7 @@ public class Bienvenida {
         //Agregando un elemento a la lista
         personas.add(persona1);
         personas.add(persona2);
-        
+
         for (Persona p: personas) {
 
             System.out.println("Persona :"+p.getNombre());
