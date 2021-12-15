@@ -9,15 +9,29 @@ public class MethodRegular {
         char[] opCodes = {'d', 'a', 's', 'm'};
         double[] results = new double[opCodes.length];
 
-        for (int i = 0; i < opCodes.length; i++) {
-         results[i] = execute(opCodes[i], leftVals[i], rightVals[i]);
-        }
-
-        for(double currentResult : results)
-            System.out.println(currentResult);
+      if (args.length == 0) {
+          for (int i = 0; i < opCodes.length; i++) {
+              results[i] = execute(opCodes[i], leftVals[i], rightVals[i]);
+          }
+          for(double currentResult : results)
+              System.out.println(currentResult);
+      } else if(args.length == 3)
+          handleCommanLine(args);
+      else 
+          System.out.println("Please provide an operation code and 2 numeric values");
+        
 
     }
-//esto es un comentario
+
+    private static void handleCommanLine(String[] args) {
+        char opCode = args[0].charAt(0);
+        double leftVal = Double.parseDouble(args[1]);
+        double rightVal = Double.parseDouble(args[2]);
+        double result = execute(opCode, leftVal, rightVal);
+        System.out.println(result);
+    }
+
+    //esto es un comentario
     static double execute (char opCode, double leftVal, double rightVal){
         double result;
         switch (opCode){
